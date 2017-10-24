@@ -1,0 +1,6 @@
+1- Creer toutes les tables et les services y affernt (SM, SA)
+2- Creer tous les webservice
+2-b- Creer les differents factory (prendre en consideration les forces de kotlin)
+3- Mettre en place la table opration
+4- Ameliorer le system + eviter de monopoliser la classe application
+5- Creer les differents ecrans
