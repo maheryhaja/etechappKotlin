@@ -1,12 +1,12 @@
 package mg.etech.mobile.etechappkotlin
 
+import android.app.Activity
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_splash.*
 
-class SplashActivity : AppCompatActivity(){
+class SplashActivity : Activity() {
 
     val nom: String = "entier"
     val testSA: TestSA = TestSAImpl
@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity(){
         setContentView(R.layout.activity_splash)
         txtSplashHello.text = "Bonjour le monde $nom"
 
-        btnSplashEssai.setOnClickListener{
+        btnSplashEssai.setOnClickListener {
             txtSplashHello.text = txtSplashHello.text.toString() + testSA.getName()
         }
 
@@ -36,10 +36,10 @@ class SplashActivity : AppCompatActivity(){
 
     override fun onPause() {
         super.onPause()
-        Log.d("mahery-haja", "Before pause called ${disposable.size()} ")
+        Log.d("mahery-haja", "Before another pause called ${disposable.size()} ")
 
-        disposable?.clear()
-        Log.d("mahery-haja", "On pause called ${disposable.size()} ")
+        disposable.clear()
+        Log.d("mahery-haja", "On pause called another time ${disposable.size()} ")
     }
 }
 
